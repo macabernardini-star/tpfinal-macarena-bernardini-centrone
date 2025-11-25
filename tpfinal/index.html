@@ -1,112 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Imagine Dragons | Sitio Tributo</title>
-
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Ícono -->
-  <link rel="icon" type="image/png" href="assets/img/icon.png">
-
-  <!-- CSS externo -->
-  <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imagine Dragons - Página Principal</title>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
+<body>
 
-<body class="bg-black text-white font-sans">
+  <!-- NAV -->
+  <header>
+    <h1 class="logo">IMAGINE DRAGONS</h1>
 
-  <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 w-full bg-black bg-opacity-70 backdrop-blur z-50">
-    <nav class="max-w-6xl mx-auto flex items-center justify-between p-4">
-      <h1 class="text-2xl font-bold tracking-wide">IMAGINE DRAGONS</h1>
+    <!-- Botón menú -->
+    <button id="menu-btn" class="menu-btn">☰</button>
 
-      <!-- Botón mobile -->
-      <button id="menu-btn" class="md:hidden text-white text-3xl">
-        ☰
-      </button>
+    <!-- Menú -->
+    <nav id="menu" class="menu">
+    <a href="biografia.html">Biografía</a>
+<a href="integrantes.html">Integrantes</a>
+<a href="historia.html">Historia</a>
+<a href="giras.html">giras</a>
+<a href="galeria.html">Galería</a>
+<a href="merch.html">Merch</a>
+<a href="datos-curiosos.html">Datos curiosos</a>
+<a href="familias.html">Familias</a>
+<a href="creacion.html">Creación</a>
+<a href="discos.html">Discos</a>
+<a href="premios.html">Premios</a>
+<a href="redes.html">Redes</a>
+<a href="contacto.html">Contacto</a>
+<a href="ex-miembros.html">Ex miembros</a>
+<a href="juego.html">Juego</a>
 
-      <!-- Links -->
-      <ul id="menu" class="hidden md:flex gap-6 text-lg">
-        <li><a href="biografia.html" class="hover:text-red-500">Biografía</a></li>
-        <li><a href="discografia.html" class="hover:text-red-500">Discografía</a></li>
-        <li><a href="giras.html" class="hover:text-red-500">Giras</a></li>
-        <li><a href="galeria.html" class="hover:text-red-500">Galería</a></li>
-        <li><a href="juego.html" class="hover:text-red-500">Juego</a></li>
-        <li><a href="contacto.html" class="hover:text-red-500">Contacto</a></li>
-      </ul>
     </nav>
-
-    <!-- Menú móvil -->
-    <ul id="mobile-menu" class="hidden flex-col bg-black md:hidden px-6 pb-4 text-lg">
-      <li><a href="biografia.html" class="block py-2 hover:text-red-500">Biografía</a></li>
-      <li><a href="discografia.html" class="block py-2 hover:text-red-500">Discografía</a></li>
-      <li><a href="giras.html" class="block py-2 hover:text-red-500">Giras</a></li>
-      <li><a href="galeria.html" class="block py-2 hover:text-red-500">Galería</a></li>
-      <li><a href="juego.html" class="block py-2 hover:text-red-500">Juego</a></li>
-      <li><a href="contacto.html" class="block py-2 hover:text-red-500">Contacto</a></li>
-    </ul>
   </header>
-
+  
   <!-- HERO -->
-  <section 
-    class="h-screen w-full bg-cover bg-center flex items-center justify-center text-center px-6"
-    style="background-image: url('assets/img/hero.jpg');"
-  >
-    <div class="bg-black/50 p-10 rounded-xl backdrop-blur">
-      <h2 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-        BIENVENIDOS AL UNIVERSO <br> DE IMAGINE DRAGONS
-      </h2>
+  <section class="hero">
+    <h2>BIENVENIDOS AL UNIVERSO DE IMAGINE DRAGONS</h2>
+    <p>Un recorrido por su historia, música, giras, arte y experiencias únicas.</p>
 
-      <p class="text-gray-200 text-lg md:text-xl mb-8 max-w-xl mx-auto">
-        Un recorrido por su historia, música, giras, arte y experiencias únicas.
-      </p>
+    <div class="botones-hero">
+      <a href="discos.html" class="btn rojo">Explorar Discografía</a>
+      <a href="juego.html" class="btn gris">Jugar</a>
+    </div>
+  </section>
 
-      <div class="flex flex-col md:flex-row gap-4 justify-center">
-        <a href="discografia.html"
-           class="px-6 py-3 bg-red-600 rounded-lg hover:bg-red-700 text-lg">
-          Explorar Discografía
-        </a>
-        <a href="juego.html"
-           class="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 text-lg">
-          Jugar
-        </a>
+  <!-- TARJETAS -->
+  <section class="seccion-cards">
+    <h2>Explorá el Sitio</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Biografía</h3>
+        <p>Conocé los comienzos, evolución y momentos clave de la banda.</p>
+      </div>
+
+      <div class="card">
+        <h3>Galería</h3>
+        <p>Fotos en vivo, estudios y momentos icónicos.</p>
+      </div>
+
+      <div class="card">
+        <h3>Juego</h3>
+        <p>Poné a prueba tus conocimientos con un juego exclusivo.</p>
       </div>
     </div>
   </section>
-
-  <!-- SECCIONES DESTACADAS -->
-  <section class="max-w-6xl mx-auto py-16 px-6">
-    <h3 class="text-3xl font-bold mb-10 text-center">Explorá el Sitio</h3>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <a href="biografia.html" class="bg-gray-900 p-6 rounded-xl hover:bg-gray-800 transition">
-        <h4 class="text-xl font-bold mb-2">Biografía</h4>
-        <p class="text-gray-300">Conocé los comienzos, evolución y momentos clave de la banda.</p>
-      </a>
-
-      <a href="galeria.html" class="bg-gray-900 p-6 rounded-xl hover:bg-gray-800 transition">
-        <h4 class="text-xl font-bold mb-2">Galería</h4>
-        <p class="text-gray-300">Fotos en vivo, estudios y momentos icónicos.</p>
-      </a>
-
-      <a href="juego.html" class="bg-gray-900 p-6 rounded-xl hover:bg-gray-800 transition">
-        <h4 class="text-xl font-bold mb-2">Juego</h4>
-        <p class="text-gray-300">Poné a prueba tus conocimientos con un juego exclusivo.</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-gray-950 py-8 mt-16">
-    <p class="text-center text-gray-400 text-sm">
+ <!-- FOOTER -->
+  <footer>
+    <p>
       Sitio tributo creado para Informática General 2025 · Macarena Bernardini
     </p>
   </footer>
-
-  <!-- JS externo -->
   <script src="js/index.js"></script>
-
 </body>
 </html>
