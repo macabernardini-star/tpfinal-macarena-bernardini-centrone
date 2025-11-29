@@ -1,12 +1,12 @@
-/*
-document.getElementById("menu-btn").addEventListener("click", () => {
-  const menu = document.getElementById("menu");
-  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-});
-*/
+// index.js
+const texto = document.getElementById('bienvenida');
 
-document.getElementById("menu-btn").addEventListener("click", () => {
-  const menu = document.getElementById("menu");
-  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-});
+setInterval(() => {
+  if (texto.classList.contains('animate__fadeIn')) {
+    texto.classList.replace('animate__fadeIn', 'animate__fadeOut');
+  } else {
+    texto.classList.replace('animate__fadeOut', 'animate__fadeIn');
+  }
+}, 3000); // cada 3 segundos
 
+volarDragon();
