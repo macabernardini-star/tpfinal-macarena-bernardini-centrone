@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Historia – Imagine Dragons</title>
+
+  <!-- estilos -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- NAVBAR-->
+    <header>
+        <h1 class="logo">IMAGINE DRAGONS</h1>
+   
+   <nav id="menu" class="menu-double">
+  <div class="menu-row">
+    <a href="index.html" class="cell">Home</a>
+    <a href="integrantes.html" class="cell">Integrantes</a>
+    <a href="biografia.html" class="cell">Biografía</a>
+    <a href="giras.html" class="cell">Giras</a>
+    <a href="galeria.html" class="cell">Galería</a>
+  </div>
+
+  <div class="menu-row">
+    <a href="merch.html" class="cell">Merch</a>
+    <a href="datos-curiosos.html" class="cell">Datos curiosos</a>
+    <a href="creacion.html" class="cell">Creación</a>
+    <a href="discos.html" class="cell">Discos</a>
+    <a href="premios.html" class="cell">Premios</a>
+    <a href="redes.html" class="cell">Redes</a>
+    <a href="contacto.html" class="cell">Contacto</a>
+    <a href="ex-miembros.html" class="cell">Ex miembros</a>
+    <a href="juego.html" class="cell">Juego</a>
+  </div>
+</nav>
+    </header>
+
+<main class="historia-contenedor">
+
+  <h2 class="titulo">Historia de Imagine Dragons</h2>
+
+    <img src="img/dragons.jpg" alt="Imagine Dragons Historia" class="img-historia">
+
+    <p class="intro">
+      Presioná el botón para escuchar la historia narrada de la banda en voz femenina
+      joven y dulce. Si no tenés el archivo de audio subido, la página lo leerá automáticamente con la voz del navegador.
+    </p>
+
+    <div class="controls">
+      <button id="btn-voz" class="btn-play" aria-pressed="false" aria-label="Escuchar historia">
+        ▶ Escuchar Historia
+      </button>
+
+      <button id="btn-pause" class="btn-pause" aria-label="Pausar narración" hidden>
+        ⏸ Pausar
+      </button>
+
+      <div id="status" class="status" aria-live="polite"></div>
+    </div>
+
+    <!-- Texto (mostrado para que el usuario vea lo que se va a leer) -->
+    <section class="texto-audio" id="texto-audio">
+      <p>
+        Imagine Dragons es una banda estadounidense que nació en el año 2008.
+      </p>
+      <p>
+        Todo comenzó cuando Dan Reynolds, estudiante universitario, conoció al baterista Andrew Tolman.
+        Juntos formaron el primer boceto de un proyecto musical que poco a poco fue creciendo.
+      </p>
+      <p>
+        Los integrantes cambiaron varias veces hasta que la historia tomó forma: primero llegó Wayne Sermon,
+        guitarrista con formación en Berklee, y luego Ben McKee, quien completó la alineación.
+      </p>
+      <p>
+        Con la banda consolidada, se mudaron a Las Vegas, donde tocaron en bares, festivales locales
+        y grabaron sus primeros EPs. Compartían su música por internet y fueron ganando seguidores paso a paso.
+      </p>
+      <p>
+        Entre 2010 y 2011, su sonido empezó a llamar la atención de sellos importantes. Era una mezcla potente:
+        rock alternativo con toques pop y elementos electrónicos — algo fresco y diferente.
+      </p>
+      <p>
+        El gran salto llegó en 2012 con su álbum debut, Night Visions. De ese disco nacieron temas como
+        “It’s Time”, “Demons” y sobre todo “Radioactive”, que se convirtió en un fenómeno global.
+      </p>
+      <p>
+        Desde entonces, Imagine Dragons ha recorrido el mundo, llenado estadios y ganado premios internacionales.
+        Su música combina fuerza y emoción, y su estilo sigue evolucionando sin perder su identidad.
+      </p>
+      <p>
+        Esta es la historia de cómo un grupo de jóvenes con un sueño gigante pasó de tocar en bares…
+        a convertirse en una de las bandas más influyentes de su generación.
+      </p>
+    </section>
+
+    <!-- audio file (colocar aquí el mp3 con el nombre exacto sugerido) -->
+    <audio id="audio-historia" preload="metadata">
+      <source src="audio/historia_imagine_dragons_vozdulce.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </main>
+
+  <script src="js/historia.js"></script>
+</body>
+</html>
