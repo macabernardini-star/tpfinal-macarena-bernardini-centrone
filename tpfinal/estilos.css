@@ -447,139 +447,105 @@ h2 {
 }
 
 /* ---------- Galería: miniaturas en grid ---------- */
-.galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas en desktop */
-  gap: 16px;
-  align-items: center;
-  margin-top: 20px;
-  padding: 0 10px;
+/* ----- Texto centrado ----- */
+.Dragons {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  line-height: 1.5;
 }
 
-/* miniaturas */
+/* ----- GRID DE IMÁGENES ----- */
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+  padding: 0 15px;
+}
+
 .miniatura {
   width: 100%;
   height: 170px;
-  object-fit: cover;      /* recorta sin deformar */
+  object-fit: cover;
   border-radius: 10px;
   cursor: pointer;
-  display: block;
-  transition: transform .18s ease, box-shadow .18s ease;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: .2s;
 }
 
-/* efecto hover */
-.miniatura:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
-}
 
-/* ---------- Lightbox (overlay) ---------- */
+/* ----- LIGHTBOX ----- */
 .lightbox {
   position: fixed;
-  inset: 0; /* top:0; right:0; bottom:0; left:0; */
-  background: rgba(0,0,0,0.92);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  padding: 30px;
-}
-
-/* oculto */
-.lightbox.oculto {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
   display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
 }
 
-/* imagen ampliada */
+.lightbox.mostrar {
+  display: flex;
+}
+
 #imagen-lightbox {
-  width: 35vw;          /* ancho igual para todas */
-  height: 45vh;         /* alto igual para todas */
-  object-fit: cover;    /* recorta sin deformar */
+  max-width: 90%;
+  max-height: 80%;
   border-radius: 10px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
 }
 
-/* botones (X y flechas) */
+/* X */
 .cerrar {
   position: absolute;
-  top: 18px;
-  right: 22px;
-  font-size: 34px;
-  color: #fff;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
   cursor: pointer;
-  user-select: none;
-  background: rgba(255,255,255,0.04);
-  padding: 6px 12px;
-  border-radius: 8px;
-  line-height: 1;
+  color: white;
 }
 
+/* Flechas */
 .flecha {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: #fff;
-  font-size: 48px;
+  font-size: 60px;
   cursor: pointer;
+  color: white;
   user-select: none;
   padding: 10px;
-  background: rgba(0,0,0,0.2);
-  border-radius: 10px;
-  transition: background .12s ease, transform .12s ease;
 }
 
-/* ubicacion flechas */
-.flecha-izq { left: 18px; }
-.flecha-der { right: 18px; }
+.flecha-izq { left: 20px; }
+.flecha-der { right: 20px; }
 
-/* hover de flechas */
-.flecha:hover {
-  background: rgba(255,255,255,0.06);
-  transform: translateY(-50%) scale(1.05);
-}
-
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 900px) {
-  .galeria-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .miniatura {
-    height: 150px;
-  }
-  .flecha { font-size: 40px; padding: 8px; }
-}
-
-@media (max-width: 600px) {
+/* ---- CELULAR ---- */
+@media (max-width: 480px) {
   .galeria-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
   }
-  .miniatura {
-    height: 120px;
-    border-radius: 6px;
-  }
-  .flecha { display: none; } /* en móvil se puede navegar con swipe / tocar miniaturas */
-  .cerrar { font-size: 28px; right: 12px; top: 12px; }
+
   #imagen-lightbox {
-    max-height: 78vh;
+    max-width: 95%;
+    max-height: 70%;
+  }
+
+  .flecha {
+    font-size: 45px;
+  }
+
+  .cerrar {
+    font-size: 32px;
   }
 }
 
-/* Extra: pequeño caption debajo de la imagen en lightbox (opcional) */
-.lightbox .caption {
-  position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #ddd;
-  font-size: 14px;
-  background: rgba(0,0,0,0.45);
-  padding: 6px 12px;
-  border-radius: 6px;
-}
 
-/* ====== FOOTER ====== */
+/* Footer (sin cambios) */
 footer {
   text-align: center;
   padding: 20px;
@@ -587,3 +553,5 @@ footer {
   color: aliceblue;
   margin-top: 100px;
 }
+
+
