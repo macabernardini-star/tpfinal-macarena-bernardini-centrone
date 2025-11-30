@@ -543,15 +543,59 @@ h2 {
     font-size: 32px;
   }
 }
-
-
-/* Footer (sin cambios) */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #101420;
-  color: aliceblue;
-  margin-top: 100px;
+/* Oculto la info extra por defecto */
+.miembro {
+    background: #111;
+    border: 1px solid #300;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 40px auto;
+    width: 90%;            /* ANTES ocupaba demasiado → ahora queda más centrado y elegante */
+    max-width: 900px;      /* Para que no sea gigante en pantallas grandes */
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    transition: .3s;
 }
 
+.miembro img {
+    width: 230px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
 
+.info {
+    flex: 1;
+}
+.extra-info {
+    display: block;
+    max-width: 900px;     /* para que quede centrado y no demasiado ancho */
+    margin: 20px auto;    /* centra el texto */
+    text-align: center;   /* centra las líneas */
+    color: #ffffff;
+    font-size: 1.2rem;    /* un poquito más grande */
+    line-height: 1.7;     /* más cómodo de leer */
+    padding: 10px 20px;   /* separación visual */
+}
+
+/* Cuando el bloque está activo */
+.miembro.activo .extra-info {
+    display: block;
+}
+
+/* Indicador opcional: la tarjeta se agranda un poquito */
+.miembro.activo {
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+
+footer{
+  background: rgb(11, 9, 160);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
