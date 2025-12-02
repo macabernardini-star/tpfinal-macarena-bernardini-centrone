@@ -777,6 +777,65 @@ h2 {
     border-radius: 50%;
 }
 
+/* === BANNER === */
+
+.banner-datos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.banner-datos img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-bottom: 3px solid #900;
+}
+
+/* === TÍTULO === */
+
+.titulo-datos {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+/* === DATOS === */
+
+.datos-contenedor {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.dato {
+    background: #111;
+    border: 1px solid #400;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: 0.3s;
+}
+
+.dato:hover {
+    transform: scale(1.02);
+    background: #161616;
+}
+
+/* Texto */
+.dato h3 {
+    margin-top: 0;
+    color: #e33;
+}
+
+.dato.abierto {
+    background: #1b1b1b;
+    border-color: #d22;
+    transform: scale(1.03);
+}
+
+
 footer{
   background: rgb(11, 9, 160);
   color: white;
