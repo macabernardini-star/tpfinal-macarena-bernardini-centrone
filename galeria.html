@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería – Imagine Dragons</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header>
+    <h1 class="logo">IMAGINE DRAGONS</h1>
+
+    <nav id="menu" class="menu-double">
+        <div class="menu-row">
+            <a href="biografia.html" class="cell">Biografía</a>
+            <a href="index.html" class="cell">Home</a>
+            <a href="historia.html" class="cell">Historia</a>
+            <a href="giras.html" class="cell">Giras</a>
+            <a href="integrantes.html" class="cell">Integrantes</a>
+        </div>
+
+        <div class="menu-row">
+            <a href="merch.html" class="cell">Merch</a>
+            <a href="datos-curiosos.html" class="cell">Datos curiosos</a>
+            <a href="familias.html" class="cell">Familias</a>
+            <a href="discos.html" class="cell">Discos</a>
+            <a href="premios.html" class="cell">Premios</a>
+            <a href="redes.html" class="cell">Redes</a>
+            <a href="contacto.html" class="cell">Contacto</a>
+            <a href="ex-miembros.html" class="cell">Ex miembros</a>
+            <a href="juego.html" class="cell">Juego</a>
+        </div>
+    </nav>
+</header>
+
+<main class="galeria-contenedor">
+
+    <h2 class="titulo">Galería</h2>
+
+    <p class="Dragons">
+        Explora las imágenes de Imagine Dragons. Estas son algunas de sus fotos.<br>
+        Para verlas mejor, haz click en cualquiera.
+    </p>
+
+    <div class="galeria-grid">
+        <img src="subcarpeta/foto1.jpg" class="miniatura">
+        <img src="subcarpeta/foto2.jpg" class="miniatura">
+        <img src="subcarpeta/foto3.jpg" class="miniatura">
+        <img src="subcarpeta/foto4.jpg" class="miniatura">
+        <img src="subcarpeta/foto5.jpg" class="miniatura">
+        <img src="subcarpeta/foto6.jpg" class="miniatura">
+        <img src="subcarpeta/foto7.jpg" class="miniatura">
+        <img src="subcarpeta/foto8.jpg" class="miniatura">
+    </div>
+
+</main>
+
+<!-- 🟣 LIGHTBOX -->
+<div id="lightbox" class="lightbox oculto">
+    <span id="cerrar" class="cerrar">✕</span>
+    <span id="prev" class="flecha flecha-izq">❮</span>
+
+    <img id="imagen-lightbox" src="">
+
+    <span id="next" class="flecha flecha-der">❯</span>
+</div>
+
+<footer>
+    <p>Sitio tributo creado para Informática General 2025 · Macarena Bernardini</p>
+</footer>
+
+<script src="js/galeria.js"></script>
+
+</body>
+</html>

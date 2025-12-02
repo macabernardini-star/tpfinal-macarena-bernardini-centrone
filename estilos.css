@@ -1,0 +1,655 @@
+/* ====== RESETEO ====== */ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* GENERAL */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: black;
+  color: white;
+}
+/* NAVEGACIÓN GENERAL */
+header {
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* LOGO */
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 18px;
+}
+
+/* MENÚ DESKTOP */
+.menu-desktop {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  font-size: 15px;
+}
+
+.menu-desktop li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+.menu-desktop li a:hover {
+  color: rgba(202, 2, 2, 0.726);
+}
+
+/* BOTÓN MOBILE */
+.menu-btn {
+  display: none;
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: -5px;
+}
+
+/* MENÚ MÓVIL (oculto por defecto) */
+.menu-mobile {
+  display: none;
+  flex-direction: column;
+  background: black;
+  width: 100%;
+  padding: 15px;
+}
+
+.menu-mobile li {
+  padding: 10px 0;
+}
+
+.menu-mobile li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+  .menu-desktop {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.hero h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.botones-hero {
+  margin-top: 25px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.rojo {
+  background: red;
+  color: white;
+}
+
+.gris {
+  background: white;
+  color: black;
+}
+
+/* CARDS */
+.seccion-cards {
+  margin-top: 150px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.cajas {
+  width: 260px;
+  padding: 25px;
+  border-radius: 15px;
+   background: #062b999f;
+  color: #ffffff;
+}
+
+/* ====== BOTÓN ====== */
+.menu-btn {
+  font-size: 26px;
+  background: black;
+  border: 2px solid white;
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 8px;
+  display: block;
+}
+
+/* ====== MENÚ (cuadrícula como tu imagen) ====== */
+.menu-grid {
+  width: 100%;
+  position: fixed;
+  top: 70px;
+  left: 0;
+
+  background: rgba(0,0,0,0.95);
+  padding: 12px 0;
+  z-index: 998;
+
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-grid.show {
+  display: flex;
+}
+
+.menu-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ====== BOTONES ====== */
+.cell {
+  padding: 8px 14px;
+  background: #0c0c0c;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  border: 1px solid #333;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+.cell:hover {
+  background: #222;
+}
+
+/* ====== CELULAR ====== */
+@media (max-width: 480px) {
+  .menu-row {
+    gap: 10px;
+  }
+
+  .cell {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+
+  .menu-btn {
+    font-size: 22px;
+    padding: 4px 8px;
+  }
+}
+
+/* Título secundario */
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Contenedor principal: texto izquierda + imagen derecha */
+.bio-contenedor {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Gran bloque de texto (izquierda) */
+.bio-texto {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Imagen al lado del texto */
+.bio-imagen {
+    width: 340px;             /* más chica */
+    height: auto;
+    object-fit: cover;
+    border: 2px solid black;  /* como el dibujo */
+    padding: 5px;
+}
+
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    .bio-contenedor {
+        flex-direction: column;
+    }
+
+    .bio-imagen,
+    .texto-abajo {
+        width: 100%;
+    }
+}
+
+/* Contenedor principal */
+.historia-contenedor {
+  max-width: 900px;
+  margin: 15px auto 80px; /* espacio por header fijo */
+  padding: 20px;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 36px;
+  margin-top: 0;      
+  margin-bottom: 18px;
+  color: #ff3b3b;
+}
+
+.img-historia {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+/* Intro */
+.intro {
+  color: #ddd;
+  font-size: 16px;
+  margin-bottom: 22px;
+}
+
+/* Controles */
+.controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+/* Botones */
+.btn-play, .btn-pause {
+  background: linear-gradient(180deg,#ff4b4b,#c91f1f);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(201,31,31,0.18);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.btn-play:hover, .btn-pause:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 30px rgba(201,31,31,0.22);
+}
+
+/* Status message */
+.status {
+  min-width: 200px;
+  color: #ddd;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* Texto que se va a leer */
+.texto-audio {
+  text-align: left;
+  color: #e6e6e6;
+  font-size: 18px;
+  line-height: 1.7;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 22px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Resaltar frases importantes en el texto */
+.texto-audio em, .texto-audio strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .historia-contenedor { margin: 120px 14px 60px; }
+  .titulo { font-size: 28px; }
+  .texto-audio { font-size: 16px; padding: 16px; }
+  .btn-play, .btn-pause { font-size: 16px; padding: 10px 16px; }
+}
+
+
+/* ====== CONTENIDO GENERAL ====== */
+.container {
+  padding-top: 150px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+  color: #ff3b3b;
+   margin-top: 120px;
+}
+
+/* ====== CARDS ====== */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+   margin-top: 100px; 
+  gap: 30px;
+  justify-content: center;
+}
+
+.card {
+  background: #111;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 15px;
+  font-size: 20px;
+  color: #ff8c00;
+}
+
+.card p {
+  margin: 0 15px 20px;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(255,140,0,0.6);
+}
+
+/* ====== RESPONSIVE CARDS ====== */
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 90%;
+  }
+}
+/* Contenedor general */
+.contenido {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Título principal + botón */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+/* ---------- Galería: miniaturas en grid ---------- */
+/* ----- Texto centrado ----- */
+.Dragons {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  line-height: 1.5;
+}
+
+/* ----- GRID DE IMÁGENES ----- */
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+  padding: 0 15px;
+}
+
+.miniatura {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+
+/* ----- LIGHTBOX ----- */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.lightbox.mostrar {
+  display: flex;
+}
+
+#imagen-lightbox {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+/* X */
+.cerrar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Flechas */
+.flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 60px;
+  cursor: pointer;
+  color: white;
+  user-select: none;
+  padding: 10px;
+}
+
+.flecha-izq { left: 20px; }
+.flecha-der { right: 20px; }
+
+/* ---- CELULAR ---- */
+@media (max-width: 480px) {
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #imagen-lightbox {
+    max-width: 95%;
+    max-height: 70%;
+  }
+
+  .flecha {
+    font-size: 45px;
+  }
+
+  .cerrar {
+    font-size: 32px;
+  }
+}
+/* Oculto la info extra por defecto */
+.miembro {
+    background: #111;
+    border: 1px solid #300;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 40px auto;
+    width: 90%;            /* ANTES ocupaba demasiado → ahora queda más centrado y elegante */
+    max-width: 900px;      /* Para que no sea gigante en pantallas grandes */
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    transition: .3s;
+}
+
+.miembro img {
+    width: 230px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.info {
+    flex: 1;
+}
+.extra-info {
+    display: block;
+    max-width: 900px;     /* para que quede centrado y no demasiado ancho */
+    margin: 20px auto;    /* centra el texto */
+    text-align: center;   /* centra las líneas */
+    color: #ffffff;
+    font-size: 1.2rem;    /* un poquito más grande */
+    line-height: 1.7;     /* más cómodo de leer */
+    padding: 10px 20px;   /* separación visual */
+}
+
+/* Cuando el bloque está activo */
+.miembro.activo .extra-info {
+    display: block;
+}
+
+/* Indicador opcional: la tarjeta se agranda un poquito */
+.miembro.activo {
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+
+/* ====== Sección Familias ====== */
+
+.family-card {
+    background: #111;
+    border: 1px solid #300;
+    border-radius: 15px;
+    padding: 25px;
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.family-card img {
+    width: 230px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.family-info {
+    flex: 1;
+}
+
+.family-info h3 {
+    color: #ffdddd;
+    margin-bottom: 10px;
+}
+
+.summary {
+    color: #bbb;
+}
+
+.extra-info {
+    display: none;
+    margin-top: 15px;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Cuando la tarjeta está activa */
+.family-card.activo .extra-info {
+    display: block;
+}
+
+.family-card.activo {
+    transform: scale(1.02);
+}
+
+
+footer{
+  background: rgb(11, 9, 160);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
