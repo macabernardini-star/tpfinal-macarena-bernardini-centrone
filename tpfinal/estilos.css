@@ -835,6 +835,80 @@ h2 {
     transform: scale(1.03);
 }
 
+/* PREMIOS */
+
+.intro-premios {
+    text-align: center;
+    font-size: 1.2rem;
+    width: 80%;
+    margin: 20px auto 40px;
+    color: #ddd;
+}
+
+/* Contenedores */
+.contador-premios {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.contador {
+    background: #111;
+    border: 1px solid #444;
+    width: 260px;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    transition: .3s;
+}
+
+.contador:hover {
+    transform: scale(1.05);
+}
+
+.contador .numero {
+    font-size: 3rem;
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+/* Lista */
+.lista-premios {
+    width: 80%;
+    margin: 50px auto;
+    color: white;
+}
+
+.lista-premios ul {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-premios li {
+    margin: 12px 0;
+    padding-left: 10px;
+    border-left: 3px solid #ffcc00;
+    font-size: 1.1rem;
+}
+/* ====== FIX PARA EL TÍTULO ROJO EN CELULAR ====== */
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 24px !important;
+    letter-spacing: 1px !important;
+    text-align: center;
+    margin-top: 155px !important;
+    margin-bottom: 15px !important;
+    padding: 0 10px;
+    display: block;
+    white-space: normal !important; /* por si estaba en nowrap */
+  }
+}
+
 
 footer{
   background: rgb(11, 9, 160);
