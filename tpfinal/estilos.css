@@ -909,9 +909,129 @@ h2 {
   }
 }
 
+/* ===== CONTENEDOR GENERAL ===== */
+.redes-section { 
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* ===== TÍTULO ===== */
+.titulo-redes {
+  font-size: 32px;
+  color: #d40000;
+  text-align: center;
+  margin-top: 110px;   /* Separado del header */
+  margin-bottom: 30px;
+}
+
+/* ===== GRID PRINCIPAL ===== */
+.redes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* ===== CELDAS ===== */
+.red {
+  background: #111;
+  padding: 25px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid #333;
+  transition: 0.3s ease;
+}
+
+.red img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.red p {
+  color: #ccc;
+}
+
+/* ===== ANIMACIONES ===== */
+
+.spotify:hover img {
+  filter: drop-shadow(0 0 15px #1db954);
+  transform: scale(1.15);
+}
+
+.youtube:hover img {
+  animation: vibrar 0.2s infinite;
+}
+
+@keyframes vibrar {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+.instagram:hover img {
+  filter: drop-shadow(0 0 15px #ff49a0);
+  transform: scale(1.15);
+}
+
+.twitter:hover img {
+  filter: drop-shadow(0 0 12px #1da1f2);
+}
+
+.facebook:hover img {
+  filter: drop-shadow(0 0 12px #1877f2);
+}
+
+.tiktok:hover img {
+  filter: drop-shadow(0 0 15px #ff0050);
+  transform: scale(1.15);
+}
+
+/* ===== RESPONSIVE CELULAR ===== */
+@media (max-width: 480px) {
+
+  /* Redes una debajo de la otra */
+  .redes-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* Título más chico y visible */
+  .titulo-redes {
+    font-size: 26px;
+    margin-top:200px;
+  }
+
+  .red img {
+    width: 70px;
+  }
+}
+.subtitulo-redes {
+  font-size: 18px;
+  color: #ddd;
+  max-width: 700px;
+  margin: 0 auto 35px auto;  /* centrado + espacio hacia abajo */
+  text-align: center;
+  line-height: 1.5;
+  padding: 0 15px;
+}
+
+/* Versión móvil */
+@media (max-width: 480px) {
+  .subtitulo-redes {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+}
+
 
 footer{
-  background: rgb(11, 9, 160);
+  background: rgba(26, 25, 75, 0.733);
   color: white;
   padding: 20px 0;
   text-align: center;
