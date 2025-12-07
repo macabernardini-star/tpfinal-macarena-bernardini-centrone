@@ -957,22 +957,21 @@ h2 {
 
 /* ===== ANIMACIONES ===== */
 
-.spotify:hover img {
-  filter: drop-shadow(0 0 15px #1db954);
-  transform: scale(1.15);
+
+@keyframes rainbow {
+    0%   { filter: drop-shadow(0 0 8px red); }
+    20%  { filter: drop-shadow(0 0 8px orange); }
+    40%  { filter: drop-shadow(0 0 8px yellow); }
+    60%  { filter: drop-shadow(0 0 8px green); }
+    80%  { filter: drop-shadow(0 0 8px blue); }
+    100% { filter: drop-shadow(0 0 8px purple); }
 }
 
-.youtube:hover img {
-  animation: vibrar 0.2s infinite;
+.rainbow:hover img {
+    animation: rainbow 1s infinite;
+    transform: scale(1.2);
 }
 
-@keyframes vibrar {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-2px); }
-  50% { transform: translateX(2px); }
-  75% { transform: translateX(-2px); }
-  100% { transform: translateX(0); }
-}
 
 .instagram:hover img {
   filter: drop-shadow(0 0 15px #ff49a0);
