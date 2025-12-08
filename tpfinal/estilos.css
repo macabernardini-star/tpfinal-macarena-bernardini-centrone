@@ -1028,6 +1028,76 @@ h2 {
   }
 }
 
+/* ---------- BOTÓN ---------- */
+/* ==== SECCIÓN PRINCIPAL DEL QUIZ ==== */
+
+.juego-container {
+  text-align: center;
+  max-width: 650px;
+  margin: auto;
+  padding: 20px;
+}
+
+.titulo-juego {
+  color: #d40000;
+  margin-top: 100px;
+}
+
+#pantalla-inicio input {
+  padding: 10px;
+  width: 200px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 15px;
+    margin-top: 150px;
+
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #d40000;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+      margin-top: 150px;
+
+}
+
+button:hover {
+  background: #ff1f1f;
+}
+
+.oculto {
+  display: none;
+}
+
+.opciones-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.opcion {
+  background: #111;
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.opcion:hover {
+  background: #222;
+}
+
+.imagen-pregunta {
+  width: 200px;
+  margin: 15px auto;
+  border-radius: 10px;
+}
 
 footer{
   background: rgba(26, 25, 75, 0.733);

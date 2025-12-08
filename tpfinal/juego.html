@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego - Imagine Dragons Quiz</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header>
+        <h1 class="logo">IMAGINE DRAGONS</h1>
+   
+   <nav id="menu" class="menu-double">
+  <div class="menu-row">
+    <a href="index.html" class="cell">Home</a>
+    <a href="integrantes.html" class="cell">Integrantes</a>
+    <a href="historia.html" class="cell">Historia</a>
+    <a href="giras.html" class="cell">Giras</a>
+    <a href="galeria.html" class="cell">Galería</a>
+  </div>
+
+  <div class="menu-row">
+    <a href="merch.html" class="cell">Merch</a>
+    <a href="discos.html" class="cell">discos</a>
+    <a href="familias.html" class="cell">familias</a>
+    <a href="biografia.html" class="cell">Biografía</a>
+    <a href="premios.html" class="cell">Premios</a>
+    <a href="redes.html" class="cell">Redes</a>
+    <a href="contacto.html" class="cell">Contacto</a>
+    <a href="ex-miembros.html" class="cell">Ex miembros</a>
+    <a href="datos-curiosos.html" class="cell">datos curiosos</a>
+  </div>
+</nav>
+    </header>
+
+<main class="juego-container">
+
+    <h2 class="titulo-juego">Juego de Preguntas – Imagine Dragons</h2>
+
+    <!-- Pantalla de inicio -->
+    <div id="pantalla-inicio">
+        <p>Ingresá tu nombre para comenzar</p>
+        <input type="text" id="nombre" placeholder="Tu nombre">
+        <button id="btn-empezar">Empezar</button>
+    </div>
+
+    <!-- Contenedor del juego -->
+    <div id="pantalla-juego" class="oculto">
+        <h2 id="pregunta"></h2>
+
+        <img id="imagen-pregunta" class="imagen-pregunta oculto">
+
+        <div id="opciones" class="opciones-grid"></div>
+    </div>
+
+    <!-- Pantalla final -->
+    <div id="pantalla-final" class="oculto">
+        <h2 id="resultado-final"></h2>
+        <button id="btn-reiniciar">Volver a empezar</button>
+    </div>
+
+</main>
+
+<script src="js/juegos.js"></script>
+</body>
+</html>
