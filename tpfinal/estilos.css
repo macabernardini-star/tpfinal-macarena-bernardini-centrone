@@ -1,4 +1,4 @@
-/* ====== RESETEO ====== */ 
+/* ====== RESETEO ====== */  
 * {
   margin: 0;
   padding: 0;
@@ -102,17 +102,42 @@ header {
     display: block;
   }
 }
+/* ====== HERO – BIOGRAFÍA ====== */
 
-/* HERO */
 .hero {
   text-align: center;
-  margin-top: 150px;
+  padding: 40px 20px;
+  margin-top: 100px; /* evita que el header fijo lo tape */
+  position: relative;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
 }
 
 .hero h2 {
-  font-size: 32px;
+  font-size: 40px;
   font-weight: bold;
+  color: #990000;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 12px;
 }
+
+/* === MODO CELULAR === */
+@media (max-width: 480px) {
+  .hero {
+    margin-top: 170px; /* baja el título para que no quede cubierto */
+    padding: 30px 10px;
+  }
+
+  .hero h2 {
+    font-size: 32px;
+  }
+}
+
 
 .botones-hero {
   margin-top: 25px;
@@ -135,26 +160,64 @@ header {
   background: white;
   color: black;
 }
-
-/* CARDS */
+/* ====== SECCIÓN DE CARDS (Biografía – Galería – Juego) ====== */
 .seccion-cards {
-  margin-top: 150px;
+  margin-top: 60px;  /* Ajusté para que no quede pegado al header */
   text-align: center;
+  padding: 20px 0;  /* Añadí un poco de padding para espaciar mejor */
 }
 
+.seccion-cards h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+/* Contenedor de las tarjetas */
 .cards {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
+  gap: 25px;
+  flex-wrap: wrap;  /* Añadí flex-wrap para que las tarjetas se acomoden en múltiples filas si es necesario */
 }
 
+/* Cada tarjeta */
 .cajas {
-  width: 260px;
-  padding: 25px;
+  width: 280px;
+  padding: 20px;
   border-radius: 15px;
-   background: #062b999f;
+  background: #062b999f;
   color: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out; /* Añadí una transición más suave */
+}
+
+.cajas:hover {
+  transform: scale(1.05);  /* Efecto al pasar el mouse */
+}
+
+.cajas h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.cajas p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ====== RESPONSIVE (para pantallas pequeñas) ====== */
+@media (max-width: 480px) {
+  .cards {
+    flex-direction: column;  /* Las tarjetas se ordenan en columna */
+    gap: 15px;
+  }
+
+  .cajas {
+    width: 90%;  /* Asegura que las tarjetas ocupen el 90% del ancho de la pantalla */
+    margin: 0 auto;  /* Centra las tarjetas */
+  }
 }
 
 /* ====== BOTÓN ====== */
@@ -266,6 +329,7 @@ h2 {
         flex-direction: column;
     }
 
+
     .bio-imagen,
     .texto-abajo {
         width: 100%;
@@ -366,10 +430,9 @@ h2 {
 
 /* ====== CONTENIDO GENERAL ====== */
 .container {
-  padding-top: 150px;
   max-width: 1100px;
   margin: auto;
-  padding: 0 15px;
+  padding: 150px 15px 0; /* arriba 150px, laterales 15px */
 }
 
 .titulo {
@@ -422,7 +485,12 @@ h2 {
 }
 
 /* ====== RESPONSIVE CARDS ====== */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+  .container {
+    padding-top: 220px; /* aumenta para que el menú no tape el h2 */
+  }
+
+  
   .cards-container {
     flex-direction: column;
     align-items: center;
@@ -453,6 +521,12 @@ h2 {
   max-width: 800px;
   margin: 0 auto 20px;
   line-height: 1.5;
+}
+.galeria-contenedor {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
 }
 
 /* ----- GRID DE IMÁGENES ----- */
@@ -525,10 +599,20 @@ h2 {
 .flecha-der { right: 20px; }
 
 /* ---- CELULAR ---- */
+/* ----- FIX PARA QUE EL H2 SE VEA EN CELULAR ----- */
 @media (max-width: 480px) {
+  .galeria-contenedor {
+    margin-top: 120px;  /* Ajusta según el alto del header */
+  }
+
+  .titulo {
+    margin-top: 10px;   /* asegura espacio extra */
+    font-size: 30px;    /* opcional: más grande y legible */
+  }
+
   .galeria-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
+  }  
 
   #imagen-lightbox {
     max-width: 95%;
@@ -550,46 +634,67 @@ h2 {
     border-radius: 12px;
     padding: 25px;
     margin: 40px auto;
-    width: 90%;            /* ANTES ocupaba demasiado → ahora queda más centrado y elegante */
-    max-width: 900px;      /* Para que no sea gigante en pantallas grandes */
+    width: 90%;
+    max-width: 900px;
     display: flex;
     gap: 25px;
     align-items: flex-start;
     transition: .3s;
 }
 
+/* Imagen */
 .miembro img {
     width: 230px;
-    height: auto;
-    border-radius: 12px;
+    height: 230px;
     object-fit: cover;
+    border-radius: 12px;
 }
 
+/* Columna derecha */
 .info {
     flex: 1;
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
+
+/* TEXTOS INFORMATIVOS */
 .extra-info {
     display: block;
-    max-width: 900px;     /* para que quede centrado y no demasiado ancho */
-    margin: 20px auto;    /* centra el texto */
-    text-align: center;   /* centra las líneas */
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
     color: #ffffff;
-    font-size: 1.2rem;    /* un poquito más grande */
-    line-height: 1.7;     /* más cómodo de leer */
-    padding: 10px 20px;   /* separación visual */
+    font-size: 1.2rem;
+    line-height: 1.7;
+    padding: 10px 20px;
 }
 
-/* Cuando el bloque está activo */
-.miembro.activo .extra-info {
-    display: block;
+/* RESPONSIVE — arregla tu problema */
+@media (max-width: 700px) {
+    .miembro {
+        flex-direction: column;     /* ← CAMBIO CLAVE */
+        text-align: center;
+    }
+
+    .miembro img {
+        margin: 0 auto;
+        width: 70%;                 /* más estético */
+        height: auto;
+    }
+
+    .info {
+        text-align: left;           /* queda prolijo */
+        padding: 10px;
+    }
 }
 
-/* Indicador opcional: la tarjeta se agranda un poquito */
-.miembro.activo {
-    transform: scale(1.02);
-    transition: 0.3s;
+/* Más chico todavía */
+@media (max-width: 480px) {
+    .miembro img {
+        width: 100%;
+    }
 }
-
 /* ====== Sección Familias ====== */
 
 .family-card {
@@ -607,15 +712,18 @@ h2 {
     cursor: pointer;
 }
 
+/* Imagen */
 .family-card img {
     width: 230px;
-    height: auto;
+    height: 230px;
     border-radius: 12px;
     object-fit: cover;
 }
 
+/* Texto */
 .family-info {
     flex: 1;
+    color: #fff;
 }
 
 .family-info h3 {
@@ -625,6 +733,7 @@ h2 {
 
 .summary {
     color: #bbb;
+    margin-bottom: 10px;
 }
 
 .extra-info {
@@ -643,18 +752,49 @@ h2 {
     transform: scale(1.02);
 }
 
+/* ==== RESPONSIVE ==== */
+@media (max-width: 700px) {
+    .family-card {
+        flex-direction: column;        /* ← CLAVE para que no se rompa */
+        text-align: center;
+    }
+
+    .family-card img {
+        margin: 0 auto;
+        width: 70%;
+        height: auto;
+    }
+
+    .family-info {
+        text-align: left;              /* que se lea cómodo */
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .family-card img {
+        width: 100%;
+    }
+}
+
 /* ====== DISCOS – SECCIÓN ====== */
 
 .hero-disco {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(135deg, #4b4b4b, #1e1e1e);
+  color: #990000;
+}
+
+.text {
+  text-align: center;
   color: white;
+  margin-bottom: 40px;
 }
 
 .hero-disco h2 {
   font-size: 40px;
   margin-bottom: 10px;
+  margin-top: 120px;  /* ajustado para desktop */
 }
 
 .hero-disco p {
@@ -662,26 +802,19 @@ h2 {
   opacity: 0.9;
 }
 
-/* ====== CONTENEDOR DE DISCOS ====== */
+/* ====== MOBILE ====== */
+@media (max-width: 480px) {
 
-/* ====== DISCOS – SECCIÓN ====== */
+  .hero-disco h2 {
+    margin-top: 180px;   /* baja lo suficiente para no quedar escondido */
+    font-size: 32px;     /* un tamaño más cómodo en pantalla chica */
+  }
 
-.hero-disco {
-  text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #4b4b4b, #1e1e1e);
-  color: white;
+  .hero-disco p {
+    font-size: 16px;
+  }
 }
 
-.hero-disco h2 {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
-.hero-disco p {
-  font-size: 18px;
-  opacity: 0.9;
-}
 
 /* ====== CONTENEDOR DE DISCOS ====== */
 
@@ -738,7 +871,7 @@ h2 {
 
   .hero-disco h2 {
     font-size: 30px;
-  }
+    }
 
   .hero-disco p {
     font-size: 16px;
@@ -779,6 +912,24 @@ h2 {
 
 /* === BANNER === */
 
+/* ===== HERO DATOS ===== */
+
+.hero-datos {
+    width: 100%;
+    text-align: center;
+    color: #ff0000;
+    padding: 80px 20px;  /* espacio suficiente para PC */
+    margin-top: 100px;   /* evita que el menú tape el título */
+}
+
+.hero-datos h2 {
+    font-size: 42px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* ===== DATOS ===== */
+
 .banner-datos {
     width: 100%;
     display: flex;
@@ -786,22 +937,11 @@ h2 {
     margin-bottom: 30px;
 }
 
-.banner-datos img {
-    width: 100%;
-    max-height: 350px;
-    object-fit: cover;
-    border-bottom: 3px solid #900;
-}
-
-/* === TÍTULO === */
-
 .titulo-datos {
     text-align: center;
     font-size: 32px;
     margin-bottom: 40px;
 }
-
-/* === DATOS === */
 
 .datos-contenedor {
     width: 90%;
@@ -823,7 +963,6 @@ h2 {
     background: #161616;
 }
 
-/* Texto */
 .dato h3 {
     margin-top: 0;
     color: #e33;
@@ -833,6 +972,25 @@ h2 {
     background: #1b1b1b;
     border-color: #d22;
     transform: scale(1.03);
+}
+
+/* ===== MODO CELULAR ===== */
+
+@media (max-width: 480px) {
+
+    .hero-datos {
+        margin-top: 150px;  /* evita que quede escondido en phones */
+        padding: 50px 15px;
+    }
+
+    .hero-datos h2 {
+        font-size: 30px;
+    }
+
+    .dato {
+        padding: 20px;
+    }
+
 }
 
 /* PREMIOS */
@@ -1028,7 +1186,6 @@ h2 {
   }
 }
 
-/* ---------- BOTÓN ---------- */
 /* ==== SECCIÓN PRINCIPAL DEL QUIZ ==== */
 
 .juego-container {
@@ -1040,17 +1197,29 @@ h2 {
 
 .titulo-juego {
   color: #d40000;
-  margin-top: 100px;
+  margin-top: 120px;   /* baja bien sin pasarte */
+  margin-bottom: 10px;
+}
+
+.subtitulo-juego {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* ===== PANTALLA DE INICIO ===== */
+
+#pantalla-inicio p {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #pantalla-inicio input {
   padding: 10px;
-  width: 200px;
+  width: 220px;
   border-radius: 10px;
   border: none;
   margin-bottom: 15px;
-    margin-top: 150px;
-
+  margin-top: 20px;     /* ANTES ERA 150px → lo saqué */
 }
 
 button {
@@ -1061,18 +1230,17 @@ button {
   color: white;
   cursor: pointer;
   font-size: 16px;
-      margin-top: 150px;
-
+  margin-top: 10px;      /* ANTES ERA 150px → lo saqué */
 }
 
 button:hover {
   background: #ff1f1f;
 }
 
-.oculto {
-  display: none;
-}
+/* Oculto */
+.oculto { display: none; }
 
+/* Opciones */
 .opciones-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1098,42 +1266,82 @@ button:hover {
   margin: 15px auto;
   border-radius: 10px;
 }
+
+/* ===== MOBILE ===== */
+@media (max-width: 480px) {
+
+  .titulo-juego {
+    margin-top: 160px;   /* para que no choque con el menú */
+  }
+
+  #pantalla-inicio input {
+    margin-top: 20px;
+  }
+}
+
 /* ==== CREADORA ==== */
 
+/* Contenedor general */
 .creadora-contenedor {
   max-width: 900px;
   margin: 40px auto;
   padding: 20px;
   text-align: center;
+  position: relative;
+  z-index: 2; /* arriba del canvas */
 }
 
+/* Título con glow y animación */
 .creadora-contenedor h2 {
-  font-size: 32px;
+  font-size: 36px;
   margin-bottom: 25px;
-  margin-top: 90px;
+  margin-top: 120px;   /* 🔥 más abajo como pediste */
   color: #d40000;
+  text-shadow: 0 0 15px rgba(255,0,0,0.7);
+  font-weight: bold;
+  letter-spacing: 1px;
+  min-height: 45px;    /* espacio para el efecto de tipeo */
 }
 
+/* Tarjeta */
 .creadora-card {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
   align-items: center;
   justify-content: center;
   background: #111;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(255,0,0,0.2);
+  backdrop-filter: blur(4px);
 }
 
+/* FOTO con glow + animación fade-in */
 .creadora-foto {
   width: 260px;
   height: 260px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #fff;
+  border: 4px solid rgba(255,0,0,0.6);
+  box-shadow: 0 0 25px rgba(255,0,0,0.65);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s ease, box-shadow 0.4s;
 }
 
+/* Cuando JS agrega .mostrar */
+.creadora-foto.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efecto glow cuando pasás el mouse */
+.creadora-foto:hover {
+  box-shadow: 0 0 40px rgba(255,0,0,0.9);
+}
+
+/* Texto */
 .creadora-texto {
   max-width: 450px;
   text-align: left;
@@ -1143,11 +1351,14 @@ button:hover {
 .creadora-texto h3 {
   font-size: 28px;
   margin-bottom: 10px;
+  color: #ff3b3b;
+  text-shadow: 0 0 8px rgba(255,0,0,0.4);
 }
 
 .creadora-texto p {
   margin-bottom: 12px;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 17px;
 }
 
 /* Mobile */
@@ -1155,8 +1366,92 @@ button:hover {
   .creadora-texto {
     text-align: center;
   }
+
+  .creadora-contenedor h2 {
+    margin-top: 150px;  /* un poco más porque el header en mobile ocupa lugar */
+    font-size: 30px;
+  }
 }
 
+/* ==== CONTACTO ==== */
+
+.contacto-contenedor {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* H2 ahora baja más para no quedar tapado por el menú */
+.contacto-contenedor h2 {
+  font-size: 34px;
+  margin-top: 80px; /* antes 90px */
+  margin-bottom: 15px;
+  color: #d40000;
+}
+
+.contacto-subtexto {
+  color: #ddd;
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+.contacto-form {
+  background: #111;
+  padding: 20px; /* antes 25px, reduce espacio interno */
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+.btn-enviar {
+  background: #d40000;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 0px;
+}
+
+.btn-enviar:hover {
+  background: #ff3c3c;
+  transform: scale(1.05);
+}
+
+/* ==== Mobile ==== */
+@media (max-width: 480px) {
+
+  /* baja aún más para evitar que el logo/menu lo tape */
+  .contacto-contenedor h2 {
+    margin-top: 120px;
+  }
+
+  /* se reduce el espacio bajo el textarea y el botón sube */
+  .contacto-form {
+    padding: 15px;
+    gap: 12px;
+  }
+  .btn-enviar {
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 0px;
+  }
+}
 
 footer{
   background: rgba(26, 25, 75, 0.733);
